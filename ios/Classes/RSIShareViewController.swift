@@ -11,7 +11,7 @@ import MobileCoreServices
 import Photos
 
 @available(swift, introduced: 5.0)
-open class RSIShareViewController: SLComposeServiceViewController {
+open class RSIShareViewController: UIViewController {
     var hostAppBundleIdentifier = ""
     var appGroupId = ""
     var sharedMedia: [SharedMediaFile] = []
