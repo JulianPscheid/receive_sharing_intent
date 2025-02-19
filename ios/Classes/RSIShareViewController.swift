@@ -40,8 +40,19 @@ open class RSIShareViewController: SLComposeServiceViewController {
     
     open override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
-        // This is called after the user selects Post. Do the upload of contentText and/or NSExtensionContext attachments.
+
+         // This is called after the post pop up did appear.
+
+        uploadFiles()
+    }
+
+    open override func configurationItems() -> [Any]! {
+        // To add configuration options via table cells at the bottom of the sheet, return an array of SLComposeSheetConfigurationItem here.
+        return []
+    }
+
+    // Do the upload of contentText and/or NSExtensionContext attachments.
+    open func uploadFiles(){
         if let content = extensionContext!.inputItems[0] as? NSExtensionItem {
             if let contents = content.attachments {
                 for (index, attachment) in (contents).enumerated() {
@@ -88,11 +99,6 @@ open class RSIShareViewController: SLComposeServiceViewController {
                 }
             }
         }
-    }
-    
-    open override func configurationItems() -> [Any]! {
-        // To add configuration options via table cells at the bottom of the sheet, return an array of SLComposeSheetConfigurationItem here.
-        return []
     }
     
     private func loadIds() {
