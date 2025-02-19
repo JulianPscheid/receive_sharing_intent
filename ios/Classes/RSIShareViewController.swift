@@ -22,9 +22,9 @@ open class RSIShareViewController: UIViewController {
         return true
     }
     
-    open override func isContentValid() -> Bool {
+    /*open override func isContentValid() -> Bool {
         return true
-    }
+    }*/
     
     open override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,9 +34,9 @@ open class RSIShareViewController: UIViewController {
     }
     
     // Redirect to host app when user click on Post
-    open override func didSelectPost() {
+    /*open override func didSelectPost() {
         saveAndRedirect(message: contentText)
-    }
+    }*/
     
     open override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -46,10 +46,10 @@ open class RSIShareViewController: UIViewController {
         uploadFiles()
     }
 
-    open override func configurationItems() -> [Any]! {
+    /*open override func configurationItems() -> [Any]! {
         // To add configuration options via table cells at the bottom of the sheet, return an array of SLComposeSheetConfigurationItem here.
         return []
-    }
+    }*/
 
     // Do the upload of contentText and/or NSExtensionContext attachments.
     open func uploadFiles(){
